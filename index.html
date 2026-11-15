@@ -1,147 +1,463 @@
 <!doctype html>
 <html lang="uz">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Naaah · Earth Jukebox</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div id="live" class="sr" aria-live="polite"></div>
-<div class="app">
-<header class="top">
-<div class="lg"><svg id="eq" width="26" height="22" viewBox="0 0 26 22" aria-hidden="true"><rect x="1" y="6" width="4" height="16" rx="2"/><rect x="8" y="0" width="4" height="22" rx="2"/><rect x="15" y="4" width="4" height="18" rx="2"/><rect x="22" y="9" width="4" height="13" rx="2"/></svg><b data-i="title"></b><i class="dot"></i></div>
-<div style="display:flex;gap:8px;align-items:center">
-<label class="pill" for="lang"><span aria-hidden="true">🌐</span><select id="lang"><option value="uz">O‘zbekcha</option><option value="en">English</option><option value="ru">Русский</option><option value="zh">中文</option><option value="hi">हिन्दी</option><option value="es">Español</option><option value="ar">العربية</option><option value="fr">Français</option></select></label>
-<div class="pill">🛰 NASA Data <i class="dot"></i></div>
-</div>
-</header>
-<nav id="nav">
-<button class="nb on" data-v="home">🏠<span data-i="home"></span></button>
-<button class="nb" data-v="ai">🤖<span>AI</span></button>
-<button class="nb" data-v="data">📊<span data-i="data"></span></button>
-<button class="nb" data-v="about">ℹ️<span data-i="about"></span></button>
-<button class="nb" data-v="set">⚙️<span data-i="set"></span></button>
-</nav>
-<main>
-<section class="view on" id="v-home">
-<div class="hero">
-<svg viewBox="0 0 600 380" role="img" aria-label="NAAAH: Yer sharini orbita halqasi o‘rab turibdi">
-<defs>
-<radialGradient id="oc" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#58b4ff"/><stop offset="1" stop-color="#0d4aa8"/></radialGradient>
-<radialGradient id="ha" cx="50%" cy="50%" r="50%"><stop offset=".78" stop-color="#3ddc84" stop-opacity=".4"/><stop offset="1" stop-color="#3ddc84" stop-opacity="0"/></radialGradient>
-<radialGradient id="mn" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#c3c9ce"/><stop offset="1" stop-color="#4a5056"/></radialGradient>
-<clipPath id="gc"><circle cx="300" cy="265" r="85"/></clipPath>
-<clipPath id="bh"><rect x="0" y="0" width="600" height="265"/></clipPath>
-<clipPath id="fh"><rect x="0" y="265" width="600" height="200"/></clipPath>
-<path id="o2" d="M70 265 a230 42 0 1 0 460 0 a230 42 0 1 0 -460 0"/>
-</defs>
-<g fill="#fff"><circle cx="40" cy="40" r="1.5"/><circle cx="130" cy="150" r="1.2"/><circle cx="520" cy="30" r="1.5"/><circle cx="560" cy="170" r="1.2"/><circle cx="480" cy="330" r="1.5"/><circle cx="60" cy="340" r="1.2"/><circle cx="250" cy="18" r="1.2"/><circle cx="400" cy="160" r="1"/></g>
-<circle cx="88" cy="280" r="16" fill="url(#mn)"/>
-<g transform="translate(300 80) scale(1.2) translate(-192 -80)" fill="none" stroke="#3ddc84" stroke-width="13" stroke-linejoin="round"><path d="M23 110 L23 50 L73 110 L73 50"/><path d="M95 110 L120 50 L145 110"/><path d="M167 110 L192 50 L217 110"/><path d="M239 110 L264 50 L289 110"/><path d="M311 50 L311 110 M361 50 L361 110 M311 80 L361 80"/></g>
-<text x="300" y="150" text-anchor="middle" font-size="13" letter-spacing="4" fill="#bfeedd" font-family="system-ui,sans-serif">LISTEN TO EARTH. FEEL THE CHANGE.</text>
-<g transform="rotate(-16 300 265)">
-<use href="#o2" fill="none" stroke="#3ddc84" stroke-width="2.5" stroke-opacity=".5"/>
-<g clip-path="url(#bh)"><text class="nt">NAAAH<animateMotion dur="14s" repeatCount="indefinite" rotate="auto"><mpath href="#o2"/></animateMotion></text><text class="nt">NAAAH<animateMotion dur="14s" begin="-7s" repeatCount="indefinite" rotate="auto"><mpath href="#o2"/></animateMotion></text></g>
-<g id="globe">
-<circle cx="300" cy="265" r="108" fill="url(#ha)"/>
-<circle cx="300" cy="265" r="85" fill="url(#oc)"/>
-<g clip-path="url(#gc)"><g transform="translate(300 265) scale(1.635) translate(-170 -100)" fill="#3DB36B"><path d="M135 85 Q150 70 172 78 Q180 92 162 100 Q150 112 138 104 Q126 95 135 85Z"/><path d="M178 108 Q200 100 212 116 Q208 138 188 144 Q176 132 178 108Z"/><path d="M160 58 Q175 52 190 62 Q182 70 168 68Z"/></g>
-<g fill="#fff" fill-opacity=".35"><ellipse cx="270" cy="215" rx="30" ry="7"/><ellipse cx="335" cy="250" rx="34" ry="8"/><ellipse cx="290" cy="305" rx="38" ry="8"/></g><circle id="heat" cx="300" cy="265" r="85" fill="#ff5a1f" opacity="0"/><circle id="haze" cx="300" cy="265" r="85" fill="#9aa0a6" opacity="0"/><ellipse id="pcap" cx="300" cy="184" rx="24" ry="8" fill="#fff" opacity=".85"/></g>
-<circle cx="300" cy="265" r="85" fill="none" stroke="#7dffb0" stroke-width="2.5" stroke-opacity=".8"/><circle id="sl" cx="300" cy="265" r="86" fill="none" stroke="#5ad1ff" stroke-width="3" opacity="0"/>
-</g>
-<path d="M70 265 a230 42 0 0 0 460 0" fill="none" stroke="#3ddc84" stroke-width="3"/>
-<g clip-path="url(#fh)"><text class="nt">NAAAH<animateMotion dur="14s" repeatCount="indefinite" rotate="auto"><mpath href="#o2"/></animateMotion></text><text class="nt">NAAAH<animateMotion dur="14s" begin="-7s" repeatCount="indefinite" rotate="auto"><mpath href="#o2"/></animateMotion></text></g>
-</g>
-</svg>
-</div>
-<div class="hello"><span data-i="hi"></span><button class="bt" id="askNow" data-i="askai"></button></div>
-<div class="chips" role="group" id="chips">
-<button class="chip on" data-k="temp" aria-pressed="true">🌡 <span data-i="temp"></span></button>
-<button class="chip" data-k="co2" aria-pressed="false">☁️ <span data-i="co2"></span></button>
-<button class="chip" data-k="ice" aria-pressed="false">🧊 <span data-i="ice"></span></button>
-<button class="chip" data-k="sea" aria-pressed="false">🌊 <span data-i="sea"></span></button>
-<button class="chip" data-k="ens" aria-pressed="false">🎼 <span data-i="ens"></span></button>
-</div>
-<div class="grid">
-<div class="card temp"><div class="k" id="tn"></div><div class="big" id="tv">—</div><div class="k" id="tk"></div></div>
-<div class="card chart">
-<div class="k" style="margin-bottom:6px"><b id="cn"></b> <span id="demo" class="warn"></span></div>
-<div class="leg" id="leg"></div>
-<canvas id="c" role="img" aria-label=""></canvas>
-<div id="cap" aria-hidden="true"></div>
-<div id="ev" class="k" style="min-height:1.4em"></div>
-<p class="k" data-i="lg"></p>
-<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="bt" id="sumb" data-i="sumb"></button></div>
-<p id="sum" class="k"></p>
-<details id="tbd"><summary data-i="tbl"></summary><div class="tb" id="tbl"></div></details>
-</div>
-<div class="card msg"><b id="mt"></b><p class="k" id="df"></p></div>
-</div>
-</section>
-<section class="view" id="v-ai"><div class="card ai">
-<b data-i="aihead"></b>
-<div id="chat" class="chat"></div>
-<div id="sug" role="group"></div>
-<div class="ai-row">
-<button class="ib pp" id="mic" aria-label="">🎙</button>
-<input type="text" id="aiq" data-ph="aiph" autocomplete="off">
-<button class="bt" id="aisend" data-i="aisend"></button>
-<button class="bt" id="aistop" data-i="aistop" hidden></button>
-</div>
-<p id="aistat" class="k" aria-live="polite"></p>
-<label for="aispeak"><span data-i="aispeak"></span><input type="checkbox" class="tg" id="aispeak" checked></label>
-</div></section>
-<section class="view" id="v-data"><div class="card">
-<b data-i="data"></b>
-<p class="k" id="src"></p>
-<p class="k" id="src2" style="white-space:pre-line"></p>
-<div class="chips" role="group" id="dchips">
-<button class="chip on" data-k="temp" aria-pressed="true">🌡 <span data-i="temp"></span></button>
-<button class="chip" data-k="co2" aria-pressed="false">☁️ <span data-i="co2"></span></button>
-<button class="chip" data-k="ice" aria-pressed="false">🧊 <span data-i="ice"></span></button>
-<button class="chip" data-k="sea" aria-pressed="false">🌊 <span data-i="sea"></span></button>
-</div>
-<hr class="sep">
-<b data-c="ctitle"></b>
-<div class="row" role="group"><button class="bt on" id="mOff" aria-pressed="true" data-c="mOff"></button><button class="bt" id="mCus" aria-pressed="false" data-c="mCus"></button></div>
-<p class="k" id="mhint"></p>
-<textarea id="cta" rows="8" spellcheck="false" readonly aria-label="CSV"></textarea>
-<div class="row" id="crow" hidden>
-<label class="bt" for="file" data-c="cfile"></label><input type="file" id="file" accept=".csv,.txt,text/csv" hidden>
-<button class="bt" id="capply" data-c="capply"></button>
-<button class="bt" id="creset" data-c="creset"></button>
-</div>
-<label class="k" id="ulab" for="cunit" hidden><span data-c="cunit"></span> <input type="text" id="cunit" maxlength="12"></label>
-<p id="cmsg" class="k" aria-live="polite"></p>
-</div></section>
-<section class="view" id="v-about"><div class="card">
-<b data-i="about"></b>
-<p data-i="abt"></p>
-<p class="k">Space · ← → · 1–5 · S · Home</p>
-</div></section>
-<section class="view" id="v-set"><div class="card set">
-<b data-i="sett"></b>
-<label for="cap_t"><span data-i="cap"></span><input type="checkbox" class="tg" id="cap_t" checked></label>
-<label for="hap"><span data-i="hap"></span><input type="checkbox" class="tg" id="hap"></label>
-<label for="bigt"><span data-i="big"></span><input type="checkbox" class="tg" id="bigt"></label>
-<label for="hct"><span data-i="hc"></span><input type="checkbox" class="tg" id="hct"></label>
-<label for="rmt"><span data-i="rm"></span><input type="checkbox" class="tg" id="rmt"></label>
-<p class="k" style="margin-top:12px" data-i="theme"></p>
-<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="bt" data-t="" data-i="auto"></button><button class="bt" data-t="light" data-i="light"></button><button class="bt" data-t="dark" data-i="dark"></button></div>
-</div></section>
-</main>
-<div class="player">
-<div style="min-width:96px"><div id="py" style="font-weight:700">—</div><div id="pv" class="k" style="color:var(--accent)"></div></div>
-<button class="ib" id="prev">⏮</button>
-<button class="ib pp" id="pp">▶</button>
-<button class="ib" id="next">⏭</button>
-<label for="spd"><span data-i="speed"></span> <input type="range" id="spd" min="0.5" max="3" step="0.5" value="1"><span id="sx">1.0x</span></label>
-<label for="insel"><span data-i="inst"></span> <select id="insel"><option value="piano">🎹 Piano</option><option value="marimba">🥁 Marimba</option><option value="synth">🎛 Synth</option><option value="bell">🔔 Bell</option><option value="organ">⛪ Organ</option></select></label>
-<label for="say"><span data-i="say"></span> <input type="checkbox" class="tg" id="say"></label>
-<button class="bt" id="rst" data-i="rst"></button>
-</div>
-</div>
-<script src="./index.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Naaah · Earth Jukebox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="live" class="sr" aria-live="polite"></div>
+    <div class="app">
+      <header class="top">
+        <div class="lg">
+          <svg
+            id="eq"
+            width="26"
+            height="22"
+            viewBox="0 0 26 22"
+            aria-hidden="true"
+          >
+            <rect x="1" y="6" width="4" height="16" rx="2" />
+            <rect x="8" y="0" width="4" height="22" rx="2" />
+            <rect x="15" y="4" width="4" height="18" rx="2" />
+            <rect x="22" y="9" width="4" height="13" rx="2" /></svg
+          ><b data-i="title"></b><i class="dot"></i>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center">
+          <label class="pill" for="lang"
+            ><span aria-hidden="true">🌐</span
+            ><select id="lang">
+              <option value="uz">O‘zbekcha</option>
+              <option value="en">English</option>
+              <option value="ru">Русский</option>
+              <option value="zh">中文</option>
+              <option value="hi">हिन्दी</option>
+              <option value="es">Español</option>
+              <option value="ar">العربية</option>
+              <option value="fr">Français</option>
+            </select></label
+          >
+          <div class="pill">🛰 NASA Data <i class="dot"></i></div>
+        </div>
+      </header>
+      <nav id="nav">
+        <button class="nb on" data-v="home">
+          🏠<span data-i="home"></span>
+        </button>
+        <button class="nb" data-v="ai">🤖<span>AI</span></button>
+        <button class="nb" data-v="data">📊<span data-i="data"></span></button>
+        <button class="nb" data-v="about">
+          ℹ️<span data-i="about"></span>
+        </button>
+        <button class="nb" data-v="set">⚙️<span data-i="set"></span></button>
+      </nav>
+      <main>
+        <section class="view on" id="v-home">
+          <div class="hero">
+            <svg
+              viewBox="0 0 600 380"
+              role="img"
+              aria-label="NAAAH: Yer sharini orbita halqasi o‘rab turibdi"
+            >
+              <defs>
+                <radialGradient id="oc" cx="35%" cy="30%" r="75%">
+                  <stop offset="0" stop-color="#58b4ff" />
+                  <stop offset="1" stop-color="#0d4aa8" />
+                </radialGradient>
+                <radialGradient id="ha" cx="50%" cy="50%" r="50%">
+                  <stop offset=".78" stop-color="#3ddc84" stop-opacity=".4" />
+                  <stop offset="1" stop-color="#3ddc84" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="mn" cx="35%" cy="30%" r="80%">
+                  <stop offset="0" stop-color="#c3c9ce" />
+                  <stop offset="1" stop-color="#4a5056" />
+                </radialGradient>
+                <clipPath id="gc"><circle cx="300" cy="265" r="85" /></clipPath>
+                <clipPath id="bh">
+                  <rect x="0" y="0" width="600" height="265" />
+                </clipPath>
+                <clipPath id="fh">
+                  <rect x="0" y="265" width="600" height="200" />
+                </clipPath>
+                <path
+                  id="o2"
+                  d="M70 265 a230 42 0 1 0 460 0 a230 42 0 1 0 -460 0"
+                />
+              </defs>
+              <g fill="#fff">
+                <circle cx="40" cy="40" r="1.5" />
+                <circle cx="130" cy="150" r="1.2" />
+                <circle cx="520" cy="30" r="1.5" />
+                <circle cx="560" cy="170" r="1.2" />
+                <circle cx="480" cy="330" r="1.5" />
+                <circle cx="60" cy="340" r="1.2" />
+                <circle cx="250" cy="18" r="1.2" />
+                <circle cx="400" cy="160" r="1" />
+              </g>
+              <circle cx="88" cy="280" r="16" fill="url(#mn)" />
+              <g
+                transform="translate(300 80) scale(1.2) translate(-192 -80)"
+                fill="none"
+                stroke="#3ddc84"
+                stroke-width="13"
+                stroke-linejoin="round"
+              >
+                <path d="M23 110 L23 50 L73 110 L73 50" />
+                <path d="M95 110 L120 50 L145 110" />
+                <path d="M167 110 L192 50 L217 110" />
+                <path d="M239 110 L264 50 L289 110" />
+                <path d="M311 50 L311 110 M361 50 L361 110 M311 80 L361 80" />
+              </g>
+              <text
+                x="300"
+                y="150"
+                text-anchor="middle"
+                font-size="13"
+                letter-spacing="4"
+                fill="#bfeedd"
+                font-family="system-ui,sans-serif"
+              >
+                LISTEN TO EARTH. FEEL THE CHANGE.
+              </text>
+              <g transform="rotate(-16 300 265)">
+                <use
+                  href="#o2"
+                  fill="none"
+                  stroke="#3ddc84"
+                  stroke-width="2.5"
+                  stroke-opacity=".5"
+                />
+                <g clip-path="url(#bh)">
+                  <text class="nt">
+                    NAAAH
+                    <animateMotion
+                      dur="14s"
+                      repeatCount="indefinite"
+                      rotate="auto"
+                    >
+                      <mpath href="#o2" />
+                    </animateMotion>
+                  </text>
+                  <text class="nt">
+                    NAAAH
+                    <animateMotion
+                      dur="14s"
+                      begin="-7s"
+                      repeatCount="indefinite"
+                      rotate="auto"
+                    >
+                      <mpath href="#o2" />
+                    </animateMotion>
+                  </text>
+                </g>
+                <g id="globe">
+                  <circle cx="300" cy="265" r="108" fill="url(#ha)" />
+                  <circle cx="300" cy="265" r="85" fill="url(#oc)" />
+                  <g clip-path="url(#gc)">
+                    <g
+                      transform="translate(300 265) scale(1.635) translate(-170 -100)"
+                      fill="#3DB36B"
+                    >
+                      <path
+                        d="M135 85 Q150 70 172 78 Q180 92 162 100 Q150 112 138 104 Q126 95 135 85Z"
+                      />
+                      <path
+                        d="M178 108 Q200 100 212 116 Q208 138 188 144 Q176 132 178 108Z"
+                      />
+                      <path d="M160 58 Q175 52 190 62 Q182 70 168 68Z" />
+                    </g>
+                    <g fill="#fff" fill-opacity=".35">
+                      <ellipse cx="270" cy="215" rx="30" ry="7" />
+                      <ellipse cx="335" cy="250" rx="34" ry="8" />
+                      <ellipse cx="290" cy="305" rx="38" ry="8" />
+                    </g>
+                    <circle
+                      id="heat"
+                      cx="300"
+                      cy="265"
+                      r="85"
+                      fill="#ff5a1f"
+                      opacity="0"
+                    />
+                    <circle
+                      id="haze"
+                      cx="300"
+                      cy="265"
+                      r="85"
+                      fill="#9aa0a6"
+                      opacity="0"
+                    />
+                    <ellipse
+                      id="pcap"
+                      cx="300"
+                      cy="184"
+                      rx="24"
+                      ry="8"
+                      fill="#fff"
+                      opacity=".85"
+                    />
+                  </g>
+                  <circle
+                    cx="300"
+                    cy="265"
+                    r="85"
+                    fill="none"
+                    stroke="#7dffb0"
+                    stroke-width="2.5"
+                    stroke-opacity=".8"
+                  />
+                  <circle
+                    id="sl"
+                    cx="300"
+                    cy="265"
+                    r="86"
+                    fill="none"
+                    stroke="#5ad1ff"
+                    stroke-width="3"
+                    opacity="0"
+                  />
+                </g>
+                <path
+                  d="M70 265 a230 42 0 0 0 460 0"
+                  fill="none"
+                  stroke="#3ddc84"
+                  stroke-width="3"
+                />
+                <g clip-path="url(#fh)">
+                  <text class="nt">
+                    NAAAH
+                    <animateMotion
+                      dur="14s"
+                      repeatCount="indefinite"
+                      rotate="auto"
+                    >
+                      <mpath href="#o2" />
+                    </animateMotion>
+                  </text>
+                  <text class="nt">
+                    NAAAH
+                    <animateMotion
+                      dur="14s"
+                      begin="-7s"
+                      repeatCount="indefinite"
+                      rotate="auto"
+                    >
+                      <mpath href="#o2" />
+                    </animateMotion>
+                  </text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="hello">
+            <span data-i="hi"></span
+            ><button class="bt" id="askNow" data-i="askai"></button>
+          </div>
+          <div class="chips" role="group" id="chips">
+            <button class="chip on" data-k="temp" aria-pressed="true">
+              🌡 <span data-i="temp"></span>
+            </button>
+            <button class="chip" data-k="co2" aria-pressed="false">
+              ☁️ <span data-i="co2"></span>
+            </button>
+            <button class="chip" data-k="ice" aria-pressed="false">
+              🧊 <span data-i="ice"></span>
+            </button>
+            <button class="chip" data-k="sea" aria-pressed="false">
+              🌊 <span data-i="sea"></span>
+            </button>
+            <button class="chip" data-k="ens" aria-pressed="false">
+              🎼 <span data-i="ens"></span>
+            </button>
+          </div>
+          <div class="grid">
+            <div class="card temp">
+              <div class="k" id="tn"></div>
+              <div class="big" id="tv">—</div>
+              <div class="k" id="tk"></div>
+            </div>
+            <div class="card chart">
+              <div class="k" style="margin-bottom: 6px">
+                <b id="cn"></b> <span id="demo" class="warn"></span>
+              </div>
+              <div class="leg" id="leg"></div>
+              <canvas id="c" role="img" aria-label=""></canvas>
+              <div id="cap" aria-hidden="true"></div>
+              <div id="ev" class="k" style="min-height: 1.4em"></div>
+              <p class="k" data-i="lg"></p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                <button class="bt" id="sumb" data-i="sumb"></button>
+              </div>
+              <p id="sum" class="k"></p>
+              <details id="tbd">
+                <summary data-i="tbl"></summary>
+                <div class="tb" id="tbl"></div>
+              </details>
+            </div>
+            <div class="card msg">
+              <b id="mt"></b>
+              <p class="k" id="df"></p>
+            </div>
+          </div>
+        </section>
+        <section class="view" id="v-ai">
+          <div class="card ai">
+            <b data-i="aihead"></b>
+            <div id="chat" class="chat"></div>
+            <div id="sug" role="group"></div>
+            <div class="ai-row">
+              <button class="ib pp" id="mic" aria-label="">🎙</button>
+              <input type="text" id="aiq" data-ph="aiph" autocomplete="off" />
+              <button class="bt" id="aisend" data-i="aisend"></button>
+              <button class="bt" id="aistop" data-i="aistop" hidden></button>
+            </div>
+            <p id="aistat" class="k" aria-live="polite"></p>
+            <label for="aispeak"
+              ><span data-i="aispeak"></span
+              ><input type="checkbox" class="tg" id="aispeak" checked
+            /></label>
+          </div>
+        </section>
+        <section class="view" id="v-data">
+          <div class="card">
+            <b data-i="data"></b>
+            <p class="k" id="src"></p>
+            <p class="k" id="src2" style="white-space: pre-line"></p>
+            <div class="chips" role="group" id="dchips">
+              <button class="chip on" data-k="temp" aria-pressed="true">
+                🌡 <span data-i="temp"></span>
+              </button>
+              <button class="chip" data-k="co2" aria-pressed="false">
+                ☁️ <span data-i="co2"></span>
+              </button>
+              <button class="chip" data-k="ice" aria-pressed="false">
+                🧊 <span data-i="ice"></span>
+              </button>
+              <button class="chip" data-k="sea" aria-pressed="false">
+                🌊 <span data-i="sea"></span>
+              </button>
+            </div>
+            <hr class="sep" />
+            <b data-c="ctitle"></b>
+            <div class="row" role="group">
+              <button
+                class="bt on"
+                id="mOff"
+                aria-pressed="true"
+                data-c="mOff"
+              ></button
+              ><button
+                class="bt"
+                id="mCus"
+                aria-pressed="false"
+                data-c="mCus"
+              ></button>
+            </div>
+            <p class="k" id="mhint"></p>
+            <textarea
+              id="cta"
+              rows="8"
+              spellcheck="false"
+              readonly
+              aria-label="CSV"
+            ></textarea>
+            <div class="row" id="crow" hidden>
+              <label class="bt" for="file" data-c="cfile"></label
+              ><input
+                type="file"
+                id="file"
+                accept=".csv,.txt,text/csv"
+                hidden
+              />
+              <button class="bt" id="capply" data-c="capply"></button>
+              <button class="bt" id="creset" data-c="creset"></button>
+            </div>
+            <label class="k" id="ulab" for="cunit" hidden
+              ><span data-c="cunit"></span>
+              <input type="text" id="cunit" maxlength="12"
+            /></label>
+            <p id="cmsg" class="k" aria-live="polite"></p>
+          </div>
+        </section>
+        <section class="view" id="v-about">
+          <div class="card">
+            <b data-i="about"></b>
+            <p data-i="abt"></p>
+            <p class="k">Space · ← → · 1–5 · S · Home</p>
+          </div>
+        </section>
+        <section class="view" id="v-set">
+          <div class="card set">
+            <b data-i="sett"></b>
+            <label for="cap_t"
+              ><span data-i="cap"></span
+              ><input type="checkbox" class="tg" id="cap_t" checked
+            /></label>
+            <label for="hap"
+              ><span data-i="hap"></span
+              ><input type="checkbox" class="tg" id="hap"
+            /></label>
+            <label for="bigt"
+              ><span data-i="big"></span
+              ><input type="checkbox" class="tg" id="bigt"
+            /></label>
+            <label for="hct"
+              ><span data-i="hc"></span
+              ><input type="checkbox" class="tg" id="hct"
+            /></label>
+            <label for="rmt"
+              ><span data-i="rm"></span
+              ><input type="checkbox" class="tg" id="rmt"
+            /></label>
+            <p class="k" style="margin-top: 12px" data-i="theme"></p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap">
+              <button class="bt" data-t="" data-i="auto"></button
+              ><button class="bt" data-t="light" data-i="light"></button
+              ><button class="bt" data-t="dark" data-i="dark"></button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div class="player">
+        <div style="min-width: 96px">
+          <div id="py" style="font-weight: 700">—</div>
+          <div id="pv" class="k" style="color: var(--accent)"></div>
+        </div>
+        <button class="ib" id="prev">⏮</button>
+        <button class="ib pp" id="pp">▶</button>
+        <button class="ib" id="next">⏭</button>
+        <label for="spd"
+          ><span data-i="speed"></span>
+          <input
+            type="range"
+            id="spd"
+            min="0.5"
+            max="3"
+            step="0.5"
+            value="1"
+          /><span id="sx">1.0x</span></label
+        >
+        <label for="insel"
+          ><span data-i="inst"></span>
+          <select id="insel">
+            <option value="piano">🎹 Piano</option>
+            <option value="marimba">🥁 Marimba</option>
+            <option value="synth">🎛 Synth</option>
+            <option value="bell">🔔 Bell</option>
+            <option value="organ">⛪ Organ</option>
+          </select></label
+        >
+        <label for="say"
+          ><span data-i="say"></span>
+          <input type="checkbox" class="tg" id="say"
+        /></label>
+        <button class="bt" id="rst" data-i="rst"></button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
 </html>
